@@ -9,7 +9,7 @@ public:
         while(i<g.size() && j<s.size())
         {
             int index=lower_bound(s.begin()+j,s.end(),g[i])-s.begin();
-            cout<<index<<endl;
+            // cout<<index<<endl;
             if(index>=s.size())
             {
                 return count;
