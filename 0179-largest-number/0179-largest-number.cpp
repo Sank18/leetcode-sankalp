@@ -19,7 +19,7 @@ public:
         }
         for(int i=0;i<num.size();i++)
         {
-            cout<<num[i]<<endl;
+            // cout<<num[i]<<endl;
             ans+=num[i];
         }
         return ans;
