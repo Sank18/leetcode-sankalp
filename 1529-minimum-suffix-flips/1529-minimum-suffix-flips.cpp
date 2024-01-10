@@ -15,9 +15,7 @@ public:
                 continue;
             }
         }
-        //count flips;
-        cout<<news<<endl;
-        if(news.size()==1 && news[0]=='0')
+       if(news.size()==1 && news[0]=='0')
         {
             return 0;
         }
