@@ -10,10 +10,7 @@ public:
             {
                 news+=target[i];
             }
-            else
-            {
-                continue;
-            }
+            
         }
        if(news.size()==1 && news[0]=='0')
         {
