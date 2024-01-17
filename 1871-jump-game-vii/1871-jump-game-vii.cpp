@@ -1,30 +1,31 @@
 class Solution {
 public:
-    bool solve(int idx, string &s, int minJ, int maxJ, vector<int> &dp){
-        if(idx >= s.length() || s[idx] == '1') return false;
-        if(idx == s.length() - 1) return true;
-        if(dp[idx]!=-1) return dp[idx];
-        dp[idx] = false;
-        for(int i = minJ; i<= maxJ; i++){
-            if(solve(idx + i, s, minJ, maxJ, dp)) return dp[idx] = true;
-        }
-        return dp[idx];
-    }
     bool canReach(string s, int minJump, int maxJump) {
-        if(s[s.length() - 1] == '1') return false;
         
-        int cnt = 0;
-      
-        for(int i = 0; i<s.length(); i++){
-            if(s[i] == '1'){
-                cnt++;
-                if(cnt >= maxJump) return false;
+        queue<int>q;
+        q.push(0);
+        int k=0;
+        int n=s.size();
+        vector<int>vis(n,0);
+        while(!q.empty())
+        {
+            int curr=q.front();
+            q.pop();
+            if(curr==(n-1))
+            {
+                return true;
             }
-            else{
-                cnt = 0;
+            for(int i=max(k,curr+minJump);i<=min(curr+maxJump,n-1);i++)
+            {
+                if(s[i]=='0' && vis[i]==0)
+                {
+                    q.push(i);
+                    vis[i]=1;
+                }
             }
+            k=curr+maxJump;
         }
-        vector<int> dp(s.length(), -1);
-        return solve(0, s, minJump, maxJump, dp);
+        return false;
+        
     }
 };
