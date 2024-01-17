@@ -12,8 +12,7 @@ public:
     }
     bool canReach(string s, int minJump, int maxJump) {
         if(s[s.length() - 1] == '1') return false;
-        // applying sliding window in order to save time and reduce time complexity
-       
+        
         int cnt = 0;
       
         for(int i = 0; i<s.length(); i++){
