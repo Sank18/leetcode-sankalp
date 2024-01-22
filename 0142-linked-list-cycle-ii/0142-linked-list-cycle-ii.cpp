@@ -42,7 +42,7 @@ public:
                 if(slow==fast)
                 {
                     
-                    return slow;
+                    break;
                 }
             }
                 
