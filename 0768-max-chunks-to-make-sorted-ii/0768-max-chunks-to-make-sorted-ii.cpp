@@ -4,16 +4,16 @@ public:
         int chunks=1;
         stack<int>st;
         vector<int>intervalmax;
-        st.push(arr[0]);
+        int maxi=arr[0];
         for(int i=1;i<arr.size();i++)
         {
-            if(arr[i]>=st.top())
+            if(arr[i]>=maxi)
             {
                 //i can do partition
-                intervalmax.push_back(st.top());
+                intervalmax.push_back(maxi);
                 // cout<<"did a partition at "<<" "<<st.top()<<endl;
                 
-                st.push(arr[i]);
+                maxi=arr[i];
             }
             else
             {
