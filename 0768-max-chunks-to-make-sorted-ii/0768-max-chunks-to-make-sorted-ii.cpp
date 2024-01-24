@@ -11,7 +11,7 @@ public:
             {
                 //i can do partition
                 intervalmax.push_back(st.top());
-                cout<<"did a partition at "<<" "<<st.top()<<endl;
+                // cout<<"did a partition at "<<" "<<st.top()<<endl;
                 chunks++;
                 st.push(arr[i]);
             }
@@ -39,7 +39,7 @@ public:
                 }
                 else
                 {
-                    cout<<"gave to merge all till partition having max value as"<<intervalmax[breakingpoint]<<endl;
+                    // cout<<"gave to merge all till partition having max value as"<<intervalmax[breakingpoint]<<endl;
                     int n=intervalmax.size();
                     for(int j=n-1;j>=breakingpoint;j--)
                     {
