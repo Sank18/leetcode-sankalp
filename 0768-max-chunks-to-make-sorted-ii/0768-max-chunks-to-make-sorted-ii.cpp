@@ -12,7 +12,7 @@ public:
                 //i can do partition
                 intervalmax.push_back(st.top());
                 // cout<<"did a partition at "<<" "<<st.top()<<endl;
-                chunks++;
+                
                 st.push(arr[i]);
             }
             else
