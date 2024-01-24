@@ -2,7 +2,7 @@ class Solution {
 public:
     int maxChunksToSorted(vector<int>& arr) {
         int chunks=1;
-        stack<int>st;
+        
         vector<int>intervalmax;
         int maxi=arr[0];
         for(int i=1;i<arr.size();i++)
