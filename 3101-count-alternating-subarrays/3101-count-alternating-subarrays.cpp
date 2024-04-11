@@ -2,24 +2,23 @@ class Solution {
 public:
     long long countAlternatingSubarrays(vector<int>& nums) {
         int n=nums.size();
-        vector<long long>dp(n,1);
-        for(int i=1;i<nums.size();i++)
+        long long curr=1;
+        long long res=1;
+        for(int i=1;i<n;i++)
         {
             if(nums[i]!=nums[i-1])
             {
-                dp[i]=dp[i-1]+1;
+                curr++;
+                res=res+curr;
             }
             else
             {
-                dp[i]=1;
+                curr=1;
+                res=res+curr;
             }
         }
-        long long ans=0;
-        for(int i=0;i<dp.size();i++)
-        {
-            ans=ans+dp[i];
-        }
-        return ans;
+        return res;
+        
         
     }
 };
